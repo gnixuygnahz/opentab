@@ -35,6 +35,9 @@ Opentab 是一个开源的轻量级的通用应用后端，具备应用存储、
 ### 初次使用
 项目运行后，会在日志中打印出 AppId，AppKey，MasterKey 。具体使用请参照 [Opentab REST API使用指南](http://leanote.com/blog/post/58a86b5aab644109c3000377)
 
+## 支持
+为了使作者更好地完善项目，欢迎大家提出issue，作者会及时做出回应。如有需求或者意见，也可以直接发送邮件至936269579@qq.com。
+
 ## 版权说明
 ```
 Copyright (c) 2017-present, Zhang Yuxing.
