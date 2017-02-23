@@ -1,0 +1,17 @@
+version: 2.0
+ 
+build:
+    lite_image:
+        compile:
+            dockerfile_path: Dockerfile
+            build_dir: /
+            cache: true
+ 
+        extract:
+            - /go/bin/app
+            - /go/config.ini
+ 
+        package:
+              dockerfile_path: Dockerfile.package
+              build_dir: /
+              cache: true
