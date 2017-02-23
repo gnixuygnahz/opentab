@@ -20,6 +20,7 @@ Opentab 是一个开源的轻量级的通用应用后端，具备应用存储、
  - gopsutil （内置组件）
  - lib/pq （内置组件）
  - qiniu sdk （内置组件）
+
 ## 部署
 ### 直接部署
 安装PostgreSQL数据库。配置项目根目录`config.ini`相关参数，设置环境变量`GIN_MODE=release`。在windows环境下，请将编译源代码后的二进制文件与config.ini放置在同一目录下，直接运行二进制文件即可；在linux环境下，需要将二进制文件与config.ini放置在/usr/bin/下，直接运行即可。
@@ -33,6 +34,7 @@ Opentab 是一个开源的轻量级的通用应用后端，具备应用存储、
 
 ### 初次使用
 项目运行后，会在日志中打印出 AppId，AppKey，MasterKey 。具体使用请参照 [Opentab REST API使用指南](http://leanote.com/blog/post/58a86b5aab644109c3000377)
+
 ## 版权说明
 ```
 Copyright (c) 2017-present, Zhang Yuxing.
