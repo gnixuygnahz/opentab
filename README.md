@@ -20,6 +20,8 @@ Opentab 是一个开源的轻量级的通用应用后端，具备应用存储、
  - gopsutil （内置组件）
  - lib/pq （内置组件）
  - qiniu sdk （内置组件）
+ - Unknwon/goconfig （内置组件）
+ - pmylund/go-cache （内置组件）
 
 ## 部署
 ### 直接部署
