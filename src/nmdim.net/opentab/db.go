@@ -1309,7 +1309,7 @@ const (
 func getFieldAclStr(cont *Context, fieldName string, mode string) string {
 	str := ``
 	if cont.IsMaster {
-		return ` 1 `
+		return ` true `
 	} else {
 		if cont.IsLogin {
 			str += ` (` + fieldName + `?'` + cont.User.Id + `' and ` + fieldName + `->'` + cont.User.Id + `'->>'` + mode + `'=true::text) or (not ` + fieldName + `?'` + cont.User.Id + `' and (`
