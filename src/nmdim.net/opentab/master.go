@@ -66,25 +66,25 @@ func (m *IbMaster) CreateClass(c *Context) (gin.H,error) {
 		switch (*data)[`mode`].(float64) {
 		case 1:
 			_,err=tx.Query(`ALTER TABLE public."`+className+`" ALTER COLUMN "ACL" SET DEFAULT '{"*":{"write":false,"read":true},"_owner":{"write":true,"read":true}}'::jsonb; `)
-			_,err=tx.Query(`UPDATE public.__field SET "default"='{"*":{"write":false,"read":true},"_owner":{"write":true,"read":true}}'`)
+			_,err=tx.Query(`UPDATE public.__field SET "default"='{"*":{"write":false,"read":true},"_owner":{"write":true,"read":true}}' where "className"='`+className+ `' and "fieldName"='ACL'`)
 			if err != nil {
 				return nil, NewError(http.StatusBadRequest, 300, errors.New("服务器内部错误"))
 			}
 		case 2:
 			_,err=tx.Query(`ALTER TABLE public."`+className+`" ALTER COLUMN "ACL" SET DEFAULT '{"*":{"write":false,"read":false},"_owner":{"write":true,"read":true}}'::jsonb; `)
-			_,err=tx.Query(`UPDATE public.__field SET "default"='{"*":{"write":false,"read":false},"_owner":{"write":true,"read":true}}'`)
+			_,err=tx.Query(`UPDATE public.__field SET "default"='{"*":{"write":false,"read":false},"_owner":{"write":true,"read":true}}'  where "className"='`+className+ `' and "fieldName"='ACL'`)
 			if err != nil {
 				return nil, NewError(http.StatusBadRequest, 300, errors.New("服务器内部错误"))
 			}
 		case 3:
 			_,err=tx.Query(`ALTER TABLE public."`+className+`" ALTER COLUMN "ACL" SET DEFAULT '{"*":{"write":false,"read":false},"_owner":{"write":false,"read":true}}'::jsonb; `)
-			_,err=tx.Query(`UPDATE public.__field SET "default"='{"*":{"write":false,"read":false},"_owner":{"write":false,"read":true}}'`)
+			_,err=tx.Query(`UPDATE public.__field SET "default"='{"*":{"write":false,"read":false},"_owner":{"write":false,"read":true}}'  where "className"='`+className+ `' and "fieldName"='ACL'`)
 			if err != nil {
 				return nil, NewError(http.StatusBadRequest, 300, errors.New("服务器内部错误"))
 			}
 		case 4:
 			_,err=tx.Query(`ALTER TABLE public."`+className+`" ALTER COLUMN "ACL" SET DEFAULT '{"*":{"write":true,"read":true},"_owner":{"write":true,"read":true}}'::jsonb; `)
-			_,err=tx.Query(`UPDATE public.__field SET "default"='{"*":{"write":true,"read":true},"_owner":{"write":true,"read":true}}'`)
+			_,err=tx.Query(`UPDATE public.__field SET "default"='{"*":{"write":true,"read":true},"_owner":{"write":true,"read":true}}'  where "className"='`+className+ `' and "fieldName"='ACL'`)
 			if err != nil {
 				return nil, NewError(http.StatusBadRequest, 300, errors.New("服务器内部错误"))
 			}
