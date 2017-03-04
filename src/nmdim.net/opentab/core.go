@@ -330,7 +330,7 @@ func loadRouter(r *gin.Engine) {
 		})
 
 		//设置Class权限
-		v1.POST(`/master/class/:className`, func(c *gin.Context) {
+		v1.PUT(`/master/class/:className`, func(c *gin.Context) {
 			cont := NewContext(c)
 			err := Authenticate(cont)
 			if !cont.ReturnError(err) {
@@ -426,7 +426,7 @@ func loadRouter(r *gin.Engine) {
 		})
 
 		//修改字段
-		v1.POST(`/master/field/:className/:fieldName`, func(c *gin.Context) {
+		v1.PUT(`/master/field/:className/:fieldName`, func(c *gin.Context) {
 			cont := NewContext(c)
 			err := Authenticate(cont)
 			if !cont.ReturnError(err) {
@@ -450,7 +450,7 @@ func loadRouter(r *gin.Engine) {
 		})
 
 		//修改应用属性
-		v1.POST(`/master/appInfo/:key`, func(c *gin.Context) {
+		v1.PUT(`/master/appInfo/:key`, func(c *gin.Context) {
 			cont := NewContext(c)
 			err := Authenticate(cont)
 			if !cont.ReturnError(err) {
