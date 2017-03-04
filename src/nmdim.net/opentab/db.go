@@ -824,6 +824,7 @@ func InitDb(db sql.DB) error {
 	_, err = tx.Query(`INSERT INTO public."__config"("key","value","notes") VALUES('AppId','` + Krand(24, KC_RAND_KIND_ALL, r) + `','')`)
 	_, err = tx.Query(`INSERT INTO public."__config"("key","value","notes") VALUES('AppKey','` + Krand(24, KC_RAND_KIND_ALL, r) + `','')`)
 	_, err = tx.Query(`INSERT INTO public."__config"("key","value","notes") VALUES('MasterKey','` + Krand(24, KC_RAND_KIND_ALL, r) + `','')`)
+	_, err = tx.Query(`INSERT INTO public."__config"("key","value","notes") VALUES('IpLimit','1000','每分钟IP访问次数限制')`)
 
 	//SMTP 设置
 	_, err = tx.Query(`INSERT INTO public."__config"("key","value","notes") VALUES('SmtpUser','-','')`)

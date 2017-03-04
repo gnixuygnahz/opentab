@@ -27,6 +27,7 @@ import (
 
 func Run() {
 	r := gin.Default()
+	loadMiddleware(r)
 	loadRouter(r)
 	fmt.Println(`应用已启动`)
 
@@ -42,6 +43,10 @@ func Run() {
 		r.Run(`:` + App.ListenPosrt)
 	}
 
+}
+
+func loadMiddleware(r *gin.Engine)  {
+	r.Use(middleware.IpLimit())
 }
 
 func loadRouter(r *gin.Engine) {
