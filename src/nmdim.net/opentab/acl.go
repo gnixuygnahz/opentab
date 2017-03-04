@@ -97,7 +97,7 @@ func AclFilter(c *Context, q *Query) error {
 				} else {
 					flat := true
 					for _, va := range c.User.Role {
-						if is_array_interface((classAcl[q.Method].(map[string]interface{}))[`objects`].([]interface{}), va) {
+						if is_array_interface((classAcl[q.Method].(map[string]interface{}))[`objects`].([]interface{}), `role:`+va) {
 
 							flat = false
 							break
