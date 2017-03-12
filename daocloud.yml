@@ -12,6 +12,6 @@ build:
             - /go/config.ini
  
         package:
-            dockerfile_path: Dockerfile.package
-            build_dir: /
-            cache: true
+              dockerfile_path: Dockerfile.package
+              build_dir: /
+              cache: true
