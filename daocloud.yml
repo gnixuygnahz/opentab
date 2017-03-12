@@ -8,7 +8,7 @@ build:
             cache: true
  
         extract:
-            - /go/bin/app
+            - /go/bin/baas
             - /go/config.ini
  
         package:
