@@ -1,23 +1,21 @@
-version: '2'
-services:
-  opentab:
-    image: daocloud.io/anytime/ibaas:master
-    links:
-    - opentabdb:opentabdb
-    privileged: false
-    restart: always
-    ports:
-    - 80:80
-    environment:
-    - GIN_MODE=release
-  opentabdb:
-    image: library/postgres:9.5.6
-      privileged: false
-      restart: always
-      expose:
-      - '5432'
-      volumes:
-      - /data:/var/lib/postgresql/data
-      environment:
-      - POSTGRES_PASSWORD=root1024
-      - POSTGRES_DB=opentab
+opentab:
+  image: daocloud.io/anytime/opentab:master
+  links:
+  - opentabdb:opentabdb
+  privileged: false
+  restart: always
+  ports:
+  - 80:80
+  environment:
+  - GIN_MODE=release
+opentabdb:
+  image: library/postgres:9.5.6
+  privileged: false
+  restart: always
+  expose:
+  - '5432'
+  volumes:
+  - /data:/var/lib/postgresql/data2
+  environment:
+  - POSTGRES_PASSWORD=root1024
+  - POSTGRES_DB=opentabdb
