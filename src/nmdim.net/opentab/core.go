@@ -764,9 +764,10 @@ myText.show();
 	.c{
 		justify-content: center;
 		align-items: center;
-		max-width: calc(100vw - 40px);
-    height: calc(100vh - 40px);
+		max-width: calc(100vw);
+    		height: calc(100vh);
 		display: flex;
+		background-color:#2C3437;
 	}
 </style>`)
 	})
