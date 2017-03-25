@@ -1,4 +1,4 @@
-version: 2.0
+version: '2'
  
 build:
     lite_image:
@@ -8,7 +8,7 @@ build:
             cache: true
  
         extract:
-            - /go/bin/app
+            - /go/bin/nmdim.net
             - /go/config.ini
  
         package:
