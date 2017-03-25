@@ -29,6 +29,7 @@ func Run() {
 	r := gin.Default()
 	loadMiddleware(r)
 	r.GET("/", func(c *gin.Context) {
+		c.Header("Content-Type","text/html;charset=utf-8")
 		c.String(http.StatusOK, `<script>/**
  * segment - A little JavaScript class (without dependencies) to draw and animate SVG path strokes
  * @version v1.0.8
