@@ -746,7 +746,11 @@ func (q *Query) GetId(str string) string {
 func (q *Query) Delete() error {
 	tx, err := App.Db.Begin()
 	defer tx.Commit()
-	_, err = tx.Query(`DELETE FROM public."` + q.ClassName + `" WHERE "id"=` + q.Id + If(q.Where != nil, ` and `+RecWhere(*q.Where), ``).(string))
+	query:=`DELETE FROM public."` + q.ClassName + `" WHERE "id"=` + q.Id
+	if q.Where != nil{
+		query+=` and `+RecWhere(*q.Where)
+	}
+	_, err = tx.Query(query)
 	if err != nil {
 		return NewError(http.StatusBadRequest, 103, errors.New(`删除失败`))
 	}
