@@ -1,3 +1,17 @@
+#题外话#
+这是我大学所写的代码，现在看来，代码杂乱无章，功能不全，扩展性极差，建议已经关注的和正在看的人不要参考此代码库。
+近期我将重写BaaS。
+
+
+
+
+
+
+
+
+
+
+
 ![Opentab Logo](.github/opentab-logo.png)
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
